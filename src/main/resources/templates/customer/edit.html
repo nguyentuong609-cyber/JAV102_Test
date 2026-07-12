@@ -1,0 +1,17 @@
+<form th:action="@{/shop/edit/{id}(id=${coffeeItem.id})}" method="post">
+
+    <input type="text"
+           name="name"
+           th:value="${coffeeItem.name}">
+
+    <input type="number"
+           name="price"
+           th:value="${coffeeItem.price}">
+
+    <input type="text"
+           name="description"
+           th:value="${coffeeItem.description}">
+
+    <button type="submit">Update</button>
+
+</form>

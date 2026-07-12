@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Menu</title>
+</head>
+
+<body>
+
+<h1>Coffee Shop Menu</h1>
+
+<hr>
+
+<h3>Our Coffee Menu:</h3>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="coffee : ${coffees}">
+        <td th:text="${coffee.name}"></td>
+        <td th:text="${coffee.price}"></td>
+        <td th:text="${coffee.description}"></td>
+        <td>
+            <a th:href="@{/shop/edit/{id}(id=${coffee.id})}">
+                Edit
+            </a>
+
+            <a th:href="@{/shop/delete/{id}(id=${coffee.id})}">
+                Delete
+            </a>
+        </td>
+    </tr>
+</table>
+
+<h1>☕ Coffee Menu Management</h1>
+
+<!-- 1. ADD ITEM SECTION -->
+<form th:action="@{/shop/add}" method="post">
+    <input type="text" name="name" placeholder="Coffee Name" required>
+
+    <input type="number" name="price" step="0.01" placeholder="Price" required>
+
+    <input type="text" name="description" placeholder="Description" required>
+
+    <button type="submit">Add Coffee</button>
+</form>
+
+
+
+
+</body>
+
+</html>
