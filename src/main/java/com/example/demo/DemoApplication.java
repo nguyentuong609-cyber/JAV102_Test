@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-
 		SpringApplication app = new SpringApplication(DemoApplication.class);
 		app.setHeadless(false);
 		app.run( args);
