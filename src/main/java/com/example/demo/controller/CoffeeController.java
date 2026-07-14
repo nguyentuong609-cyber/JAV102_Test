@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.CoffeeItem;
 import com.example.demo.repository.CoffeeRepository;
+import jakarta.servlet.annotation.MultipartConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import java.util.List;
 
 @Controller // 1. Registers this class as a Web Controller with Spring Boot
+@MultipartConfig(maxFileSize = 1204*1204*50)
 public class CoffeeController {
 
     @Autowired
